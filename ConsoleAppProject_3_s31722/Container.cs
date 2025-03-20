@@ -1,40 +1,48 @@
 namespace ConsoleAppProject_3_s31722;
 
-public class Container
+public abstract class Container
 {
-    private int counter = 1; // 
+    private static int counter = 1; // 
 
-    public string serialNumber { get; }
+    public string SerialNumber { get; } //TODO readonly
     public double maxPayload { get; }
     public double tareWeight { get; } //weight of container
-    public double cargoWeight { get; private set; } // weight of cargo
+    public double CargoWeight { get; set; } // weight of cargo 
+    
+    public double depth { get; }
+    public double height { get; }
+    public double width { get; }
 
-    protected Container(double maxPayload, double tareWeight, string type) // created a container(without cargo)
+    public Container(string type,double height, double width, double depth, double tareWeight, double maxPayload) // created a container(without cargo)
     {
         this.maxPayload = maxPayload;
+        this.depth = depth;
+        this.height = height;
+        this.width = width;
         this.tareWeight = tareWeight;
-        serialNumber = $"{type}-{counter++}";
+        SerialNumber = $"KON-{type}-{counter++}";
     }
 
-    public virtual void UnloadCargo() => cargoWeight = 0; //virtual for override класс наследник from base class
+    public virtual void UnloadCargo()
+    {
+        CargoWeight = 0;
+    } //virtual for override класс наследник from base class}
 
     public virtual void LoadCargo(double weight)
     {
-        if (cargoWeight + tareWeight > maxPayload)
+        if (CargoWeight + tareWeight > maxPayload)
         {
-            throw new CargoOverloadException($"Cannot load cargo. Overfilled detected in: {serialNumber}!.");
+            throw new CargoOverloadException($"Cannot load cargo. Overfilled detected in: {SerialNumber}!.");
         }
-        cargoWeight += weight;
+        CargoWeight += weight;
     }
-
     
-    
-    
-
-    private class CargoOverloadException : Exception
+    public class CargoOverloadException : Exception
     {
         public CargoOverloadException(string message) : base(message)
         {
         }
     }
+
+    public override string ToString() => $"{SerialNumber}: {CargoWeight/maxPayload}kg loaded, tare weight is {tareWeight}kg ";
 }
