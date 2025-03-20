@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ConsoleAppProject_3_s31722/1.0.0": {
+        "runtime": {
+          "ConsoleAppProject_3_s31722.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleAppProject_3_s31722/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,14 @@
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/bin/Debug/net9.0/ConsoleAppProject_3_s31722
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/bin/Debug/net9.0/ConsoleAppProject_3_s31722.deps.json
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/bin/Debug/net9.0/ConsoleAppProject_3_s31722.runtimeconfig.json
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/bin/Debug/net9.0/ConsoleAppProject_3_s31722.dll
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/bin/Debug/net9.0/ConsoleAppProject_3_s31722.pdb
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/ConsoleAppProject_3_s31722.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/ConsoleAppProject_3_s31722.AssemblyInfoInputs.cache
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/ConsoleAppProject_3_s31722.AssemblyInfo.cs
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/ConsoleAppProject_3_s31722.csproj.CoreCompileInputs.cache
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/ConsoleAppProject_3_s31722.dll
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/refint/ConsoleAppProject_3_s31722.dll
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/ConsoleAppProject_3_s31722.pdb
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/ConsoleAppProject_3_s31722.genruntimeconfig.cache
+/Users/dragonav/RiderProjects/APBD_3_s31722/ConsoleAppProject_3_s31722/obj/Debug/net9.0/ref/ConsoleAppProject_3_s31722.dll
