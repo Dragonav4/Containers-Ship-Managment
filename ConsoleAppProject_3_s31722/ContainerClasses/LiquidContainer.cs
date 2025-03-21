@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices;
-using ConsoleAppProject_3_s31722.Interface;
 
 namespace ConsoleAppProject_3_s31722.ContainerClasses;
 
@@ -27,18 +26,15 @@ public class LiquidContainer : Container, IHazardNotifier
 
     public override void LoadCargo(double weight)
     {
-        double limit = (IsHazardous) ? MaxPayload * 0.5 : MaxPayload * 0.9;
-        if (weight > limit)
+        var limit = (IsHazardous) ? MaxPayload * 0.5 : MaxPayload * 0.9;
+        if (CargoWeight + weight > limit)
         {
-            displayHazardNotification(
-                $"Alert overrfilled hazard cargo container. Overfilled detected in: {SerialNumber}");
             throw new CargoOverloadException($"Cannot load cargo. Overfilled detected in: {SerialNumber}!.");
         }
-
-        base.LoadCargo(weight);
+        CargoWeight+=weight;
     }
-    public void displayHazardNotification(String message)
+    public void DisplayHazardNotification()
     {
-        throw new ExternalException(message);
+        throw new ExternalException($"Alert hazard cargo container: {SerialNumber}");
     }
 }

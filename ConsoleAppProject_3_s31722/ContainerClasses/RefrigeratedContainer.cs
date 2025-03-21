@@ -1,29 +1,41 @@
 using System.Runtime.InteropServices;
-using ConsoleAppProject_3_s31722.Interface;
 
 namespace ConsoleAppProject_3_s31722.ContainerClasses;
 
 public class RefrigeratedContainer : Container, IHazardNotifier
 {
-    public string TypeOfProduct { get; set; }
-    public double Temperature { get; set; }
-
-    public static readonly Dictionary<string, double> productTemperature = new()
+    public RefrigeratedProductType TypeOfProductType { get; private set; }
+    public double Temperature { get; private set; }
+    public enum RefrigeratedProductType
     {
-        { "Bananas", 13.3 },
-        { "Chocolate", 18 },
-        { "Fish", 2 },
-        { "Meat", -15 },
-        { "Ice Cream", -18 },
-        { "Frozen pizza", -30 },
-        { "Cheese", 7.2 },
-        { "Sausages", 5 },
-        { "Butter", 20.5 },
-        { "Eggs", 19 }
+        Bananas,
+        Chocolate,
+        Fish,
+        Meat,
+        IceCream,
+        FrozenPizza,
+        Cheese,
+        Sausages,
+        Butter,
+        Eggs
+    }
+    
+    private static readonly Dictionary<RefrigeratedProductType, double> _productTemperature = new()
+    {
+        { RefrigeratedProductType.Bananas, 13.3 },
+        { RefrigeratedProductType.Chocolate, 18 },
+        { RefrigeratedProductType.Fish, 2 },
+        { RefrigeratedProductType.Meat, -15 },
+        { RefrigeratedProductType.IceCream, -18 },
+        { RefrigeratedProductType.FrozenPizza, -30 },
+        { RefrigeratedProductType.Cheese, 7.2 },
+        { RefrigeratedProductType.Sausages, 5 },
+        { RefrigeratedProductType.Butter, 20.5 },
+        { RefrigeratedProductType.Eggs, 19 }
     };
 
     public RefrigeratedContainer(
-        string typeOfProduct,
+        RefrigeratedProductType typeOfProductType,
         double temperature,
         double height,
         double width,
@@ -39,36 +51,24 @@ public class RefrigeratedContainer : Container, IHazardNotifier
             maxPayload)
     {
         {
-            if (!productTemperature.ContainsKey(typeOfProduct))
+            if (!_productTemperature.ContainsKey(typeOfProductType))
             {
-                throw new KeyNotFoundException($"Product '{typeOfProduct}' not found.");
+                throw new KeyNotFoundException($"Product '{typeOfProductType}' not found.");
             }
 
-            if (temperature > productTemperature[typeOfProduct])
+            if (temperature > _productTemperature[typeOfProductType])
             {
                 throw new ArgumentException
-                ($"Product '{typeOfProduct}' must be kept at its proper temperature " +
-                 $"{productTemperature[typeOfProduct]}°C or lower.");
+                ($"Product '{typeOfProductType}' must be kept at its proper temperature " +
+                 $"{_productTemperature[typeOfProductType]}°C or lower.");
             }
         }
-        TypeOfProduct = typeOfProduct;
+        TypeOfProductType = typeOfProductType;
         Temperature = temperature;
     }
 
-    public void displayHazardNotification(String message)
+    public void DisplayHazardNotification()
     {
-        Console.WriteLine($"[ALERT] {message}");
-    }
-    
-    public override void LoadCargo(double weight)
-    {
-        if (CargoWeight + weight > MaxPayload)
-        {
-            displayHazardNotification(
-                $"Alert overrFilled hazard cargo container. Overfilled detected in: {SerialNumber}");
-            throw new CargoOverloadException($"Cannot load cargo. Overfilled detected in: {SerialNumber}!.");
-        }
-
-        base.LoadCargo(weight);
+        Console.WriteLine($"[ALERT IN CONTAINER:] {SerialNumber}");
     }
 }

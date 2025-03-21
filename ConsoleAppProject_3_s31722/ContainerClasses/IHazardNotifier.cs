@@ -1,6 +1,6 @@
-namespace ConsoleAppProject_3_s31722.Interface;
+namespace ConsoleAppProject_3_s31722.ContainerClasses;
 
 public interface IHazardNotifier
 {
-    void displayHazardNotification(String message);
+    void DisplayHazardNotification();
 }
