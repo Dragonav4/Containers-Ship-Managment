@@ -27,7 +27,7 @@ public abstract class Container
     public virtual void UnloadCargo()
     {
         CargoWeight = 0;
-    } //virtual for override класс наследник from base class}
+    } 
 
     public virtual void LoadCargo(double weight)
     {

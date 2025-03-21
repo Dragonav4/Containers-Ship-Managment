@@ -21,7 +21,7 @@ public class LiquidContainer : Container, IHazardNotifier
             tareWeight,
             maxPayload)
     {
-        IsHazardous = IsHazardous;
+        IsHazardous = isHazardous;
     }
 
     public override void LoadCargo(double weight)

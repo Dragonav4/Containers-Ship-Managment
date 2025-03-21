@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices;
-
 namespace ConsoleAppProject_3_s31722.ContainerClasses;
 
 public class RefrigeratedContainer : Container, IHazardNotifier
