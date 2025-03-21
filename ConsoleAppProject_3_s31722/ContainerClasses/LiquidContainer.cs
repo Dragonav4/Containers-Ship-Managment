@@ -27,7 +27,7 @@ public class LiquidContainer : Container, IHazardNotifier
 
     public override void LoadCargo(double weight)
     {
-        double limit = (IsHazardous) ? maxPayload * 0.5 : maxPayload * 0.9;
+        double limit = (IsHazardous) ? MaxPayload * 0.5 : MaxPayload * 0.9;
         if (weight > limit)
         {
             displayHazardNotification(

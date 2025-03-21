@@ -5,21 +5,21 @@ public abstract class Container
     private static int counter = 1; // 
 
     public string SerialNumber { get; } //TODO readonly
-    public double maxPayload { get; }
-    public double tareWeight { get; } //weight of container
+    public double MaxPayload { get; }
+    public double TareWeight { get; } //weight of container
     public double CargoWeight { get; set; } // weight of cargo 
     
-    public double depth { get; }
-    public double height { get; }
-    public double width { get; }
+    public double Depth { get; }
+    public double Height { get; }
+    public double Width { get; }
 
     public Container(string type,double height, double width, double depth, double tareWeight, double maxPayload) // created a container(without cargo)
     {
-        this.maxPayload = maxPayload;
-        this.depth = depth;
-        this.height = height;
-        this.width = width;
-        this.tareWeight = tareWeight;
+        this.MaxPayload = maxPayload;
+        this.Depth = depth;
+        this.Height = height;
+        this.Width = width;
+        this.TareWeight = tareWeight;
         SerialNumber = $"KON-{type}-{counter++}";
     }
 
@@ -30,7 +30,7 @@ public abstract class Container
 
     public virtual void LoadCargo(double weight)
     {
-        if (CargoWeight + tareWeight > maxPayload)
+        if (CargoWeight + TareWeight > MaxPayload)
         {
             throw new CargoOverloadException($"Cannot load cargo. Overfilled detected in: {SerialNumber}!.");
         }
@@ -44,5 +44,5 @@ public abstract class Container
         }
     }
 
-    public override string ToString() => $"{SerialNumber}: {CargoWeight/maxPayload}kg loaded, tare weight is {tareWeight}kg ";
+    public override string ToString() => $"{SerialNumber}: {CargoWeight/MaxPayload}kg loaded, tare weight is {TareWeight}kg ";
 }

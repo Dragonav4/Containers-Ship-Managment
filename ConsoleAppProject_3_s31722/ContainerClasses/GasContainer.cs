@@ -27,7 +27,7 @@ public class GasContainer : Container, IHazardNotifier
     
     public override void LoadCargo(double weight)
     {
-        if (CargoWeight + weight > maxPayload)
+        if (CargoWeight + weight > MaxPayload)
         {
             displayHazardNotification(
                 $"Alert overrFilled hazard cargo container. Overfilled detected in: {SerialNumber}");

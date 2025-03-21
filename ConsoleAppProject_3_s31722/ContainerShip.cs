@@ -22,7 +22,7 @@ public class ContainerShip
     public void LoadContainer(Container container)
     {
         if(containers.Count >= MaxContainers) { throw new InvalidOperationException($"Ship {Name} cannot load more containers!");} //TODO all cons before max
-        if(GetTotalWeight() +  container.tareWeight > MaxWeight * 1000) throw new InvalidOperationException($"Ship {Name} exceeds the allowed weight!");
+        if(GetTotalWeight() +  container.TareWeight > MaxWeight * 1000) throw new InvalidOperationException($"Ship {Name} exceeds the allowed weight!");
         containers.Add(container);
     }
 
@@ -33,13 +33,13 @@ public class ContainerShip
     
     public double GetTotalWeight()
     {
-        return containers.Sum(c => c.tareWeight + c.CargoWeight);
+        return containers.Sum(c => c.TareWeight + c.CargoWeight);
     }
     
     public void PrintInfo()
     {
         Console.WriteLine(
-            $"Ship {Name}: Speed {MaxSpeed} knots, {Containers.Count}/{MaxContainers} containers, {Containers.Sum(c => c.tareWeight + c.CargoWeight) / 1000}/{MaxWeight} tons loaded");
+            $"Ship {Name}: Speed {MaxSpeed} knots, {Containers.Count}/{MaxContainers} containers, {Containers.Sum(c => c.TareWeight + c.CargoWeight) / 1000}/{MaxWeight} tons loaded");
         foreach (var container in Containers)
             Console.WriteLine($"  - {container}");
     }

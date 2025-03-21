@@ -132,7 +132,7 @@ class Program
         
         Console.WriteLine("\nAvailable containers:");
         for (int i = 0; i < containers.Count; i++)
-            Console.WriteLine($"{i + 1}. {containers[i].SerialNumber} ({containers[i].CargoWeight + containers[i].tareWeight} kg)");
+            Console.WriteLine($"{i + 1}. {containers[i].SerialNumber} ({containers[i].CargoWeight + containers[i].TareWeight} kg)");
         
         Console.Write("Select a container: ");
         if (!int.TryParse(Console.ReadLine(), out int containerIndex) || containerIndex < 1 || containerIndex > containers.Count)
@@ -143,7 +143,7 @@ class Program
 
         ContainerShip selectedShip = ships[shipIndex - 1];
         Container selectedContainer = containers[containerIndex - 1];
-        Console.Write($"Enter cargo weight for {selectedContainer.SerialNumber} (max {selectedContainer.maxPayload} kg): ");
+        Console.Write($"Enter cargo weight for {selectedContainer.SerialNumber} (max {selectedContainer.MaxPayload} kg): ");
         if (!double.TryParse(Console.ReadLine(), out double cargoWeight))
         {
             Console.WriteLine("Invalid weight input.");
